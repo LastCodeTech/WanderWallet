@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../css/style.css"rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-slate-100 text-slate-700">
+  <div class="header flex justify-between items-center py-4 px-6 bg-emerald-600 shadow">
+    <h1 class="text-2xl sm:text-3xl font-bold uppercase text-white flex items-center gap-2">
+      WanderWallet 
+      <em class="fa-solid fa-truck-plane fa-beat-fade"></em>
+    </h1>
+
+    <ul class="hidden md:flex text-lg font-thin gap-4 items-center">
+      <li class="bg-emerald-500 hover:bg-emerald-700 py-2 px-3 rounded-xl text-white"><a href="#">Home</a></li>
+      <li class="bg-emerald-500 hover:bg-emerald-700 py-2 px-3 rounded-xl text-white"><a href="#">Expense Summary</a></li>
+      <li class="bg-emerald-500 hover:bg-emerald-700 py-2 px-3 rounded-xl text-white"><a href="conversion.html">Conversion</a> </li>
+      <li class="bg-emerald-500 hover:bg-emerald-700 py-2 px-3 rounded-xl text-white"><a href="#">Add Entry</a></li>
+    </ul>
+
+    <button id="menu-btn" class="block md:hidden text-white text-2xl focus:outline-none">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="hidden lg:flex items-center gap-2 text-white">
+      <h2 class="capitalize font-bold text-xl">Total expenses :</h2> 
+      <em id="CurrencyOfTotalSpent" class="text-lg">AUD</em>
+      <em id="totalSpent" class="font-thin text-lg">22,000</em>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden flex flex-col items-center border-b-1 border-white bg-emerald-500 text-white text-lg font-thin p-4 space-y-3 md:hidden">
+    <a href="#" class="hover:bg-emerald-600 px-3 py-2 rounded border-b-1 border-white">Home</a>
+    <a href="#" class="hover:bg-emerald-600 px-3 py-2 rounded border-b-1 border-white">Expense Summary</a>
+    <a href="conversion.html" class="hover:bg-emerald-600 px-3 py-2 rounded border-b-1 border-white">Conversion</a>
+    <a href="#" class="hover:bg-emerald-600 px-3 py-2 rounded border-b-1 border-white">Add Entry</a>
+    <div class="flex items-center gap-2 mt-3">
+      <h2 class="capitalize font-bold">Total expenses :</h2> 
+      <em id="CurrencyOfTotalSpentMobile">AUD</em>
+      <em id="totalSpentMobile" class="font-thin">22,000</em>
+    </div>
+  </div>
+ <section class="flex justify-center py-15 text-center align-center">
+  <div>
+    <h1 class="capitalize text-emerald-600 font-bold text-4xl py-5">Plan Smarter, Travel Better</h1>
+    <p  class="text-xl font-thin py-5">Track expenses and stay on top of your budget with ease.</p>
+    <button class="py-2 px-2 rounded-md bg-amber-500 hover:bg-amber-600 text-white text-xl"><a href="addEntry.html">Get started <em class="fa-solid fa-chart-column"></em></a> </button>
+  </div>
+ </section>
+ <section >
+    <div class=" md:flex justify-between py-2 px-10 bg-emerald-500 text-white">
+        <h1 class="text-2xl font-bold">Trip</h1>
+        <h1 class="text-2xl font-bold">To :<em id="tripTo" class="text-xl font-thin">uganda</em></h1>
+    </div>
+ </section>
+ 
+
+
+  
+    <script  src="../javascript/interactivity.js"></script>
+</body>
+</html>
