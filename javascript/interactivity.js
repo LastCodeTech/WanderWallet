@@ -61,23 +61,7 @@ document.getElementById("selectTarget").addEventListener("change", (e) => {
 });
 
 getTargetCurrencies();
-// let selectBase = document.getElementById('selectBase');
-// let selectTarget = document.getElementById('selectTarget');
-// let amount = document.getElementById('amount');
-// let screen = document.getElementById('screen');
-// let convertNow = document.getElementById('convertNow');
-// const amountt = amount.value;
-// const fromm = selectBase.value;
-// const too = selectTarget.value;
-// function convert(fromm, too, amountt) {
-//   fetch(`https://api.frankfurter.dev/v1/latest?base=${fromm}&symbols=${too}`)
-//     .then((resp) => resp.json())
-//     .then((data) => {
-//       const convertedAmount = (amountt * data.rates[too]).toFixed(2);
-//       // alert(`${amount} ${from} = ${convertedAmount} ${to}`);
-//       screen.value.textContent=`${amountt} ${fromm} = ${convertedAmount} ${too}`
-//     });
-//   }
+
 let selectBase = document.getElementById('selectBase');
 let selectTarget = document.getElementById('selectTarget');
 let amount = document.getElementById('amount');
