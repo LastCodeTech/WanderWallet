@@ -1,60 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="../css/style.css"rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Conversion</title>
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/39c5fdd9a0.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-slate-100 text-slate-700">
-    <div class="flex justify-between px-5 py-3 bg-emerald-600 shadow text-white">
-        <h1 class="font-semibold text-3xl capitalize">Currency Conversion <em class="fa-solid fa-money-bill-transfer"></em></h1>
-        <h1 class="font-semibold text-3xl capitalize"><a href="home.html"><strong class="hidden md:inline">Home </strong><em class="fa-solid fa-house-chimney mt-5 md:mt-0"></em></a></h1>
+
+  <!-- Header -->
+  <div class="flex justify-between items-center px-5 py-3 bg-emerald-600 shadow text-white">
+    <h1 class="font-semibold text-2xl md:text-3xl capitalize">
+      Currency Conversion <em class="fa-solid fa-money-bill-transfer"></em>
+    </h1>
+    <h1 class="font-semibold text-2xl md:text-3xl capitalize">
+      <a href="home.html">
+        <strong class="hidden md:inline">Home </strong>
+        <em class="fa-solid fa-house-chimney"></em>
+      </a>
+    </h1>
+  </div>
+
+  <!-- Intro -->
+  <section class="mt-8 flex justify-center text-center px-4">
+    <div>
+      <h1 class="capitalize text-emerald-600 font-bold text-2xl md:text-4xl py-5">
+        Stay in Control of Exchange Rates, Wherever You Go
+      </h1>
+      <p class="text-lg md:text-xl font-light py-5">
+        From naira to euros, dollars to yen — get the rates you need for stress-free travel.
+      </p>
     </div>
-    <section class=" mt-8 flex justify-center text-center">
-        <div>
-        <h1 class="capitalize text-emerald-600 font-bold text-4xl py-5">Stay in Control of Exchange Rates, Wherever You Go</h1>
-        <p class="text-xl font-thin py-5">From naira to euros, dollars to yen — get the rates you need for stress-free travel.</p>
-        </div>
-    </section>
-    <section class="my-3 md:my-0 md:flex justify-center text-center mt-6">
-        <div>
-        <div >
-           <label><h4>Conversion amount</h4>
-            <input type="text" id="amount" class="border-1 border-emerald-500 w-80 h-10 rounded-md py-1 px-2 outline-none ring-0 focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-white" id="ConversionAmount" placeholder="Input amount you want to convert">
+  </section>
+
+  <!-- Converter -->
+  <section class="my-6 md:my-10 flex justify-center px-4">
+    <div class="w-full max-w-2xl">
+
+      <!-- Conversion Amount -->
+      <div class="mb-6">
+        <label class="block text-left">
+          <h4 class="mb-2 font-medium">Conversion Amount</h4>
+          <input type="text" id="amount"
+            class="w-full border border-emerald-500 rounded-md py-2 px-3 outline-none focus:ring-2 focus:ring-emerald-500"
+            placeholder="Input amount you want to convert">
         </label>
+      </div>
+
+      <!-- Currency Selectors -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+        <!-- Convert From -->
+        <div class="w-full md:w-1/2">
+          <h4 class="font-semibold mb-2 text-lg">Convert From:</h4>
+          <select id="selectBase"
+            class="w-full border border-emerald-500 rounded-md py-2 px-3 outline-none focus:ring-2 focus:ring-emerald-500">
+          </select>
         </div>
-        <div class=" md:flex justify-between my-15 gap-10 items-center ">
-         <div>
-            <h4 ><b class="text-xl font-semibold">convert From : </b><select id="selectBase" class="w-30 border-1 outline-none ring-0 border-emerald-500 rounded-md py-1 px-2">
-        </select></h4>
+
+        <!-- Arrow -->
+        <em class="fa-solid fa-arrows-left-right text-3xl text-emerald-600"></em>
+
+        <!-- Convert To -->
+        <div class="w-full md:w-1/2">
+          <h4 class="font-semibold mb-2 text-lg">Convert To:</h4>
+          <select id="selectTarget"
+            class="w-full border border-emerald-500 rounded-md py-2 px-3 outline-none focus:ring-2 focus:ring-emerald-500">
+          </select>
+        </div>
+      </div>
+
+      <!-- Conversion Result -->
+      <div class="hidden mb-6" id="resultDiv">
+        <label class="block text-left">
+          <h4 class="mb-2 font-medium">Conversion Result</h4>
+          <input type="text" id="screen" readonly
+            class="w-full border border-emerald-500 rounded-md py-2 px-3 outline-none focus:ring-2 focus:ring-emerald-500">
+        </label>
+      </div>
+
+      <!-- Button -->
+      <div class="flex justify-center">
+        <button id="convertNow"
+          class="py-2 px-6 rounded-md bg-amber-500 hover:bg-amber-600 text-white text-lg md:text-xl">
+          Convert Now <em class="fa-solid fa-money-bill-transfer"></em>
+        </button>
+      </div>
+
     </div>
-        <em class="fa-solid fa-arrows-left-right text-4xl text-emerald-600 font-thin my-5 md:my-0" ></em>
-        <div>
-            <h4><b  class="text-xl font-semibold">convert To : </b>
-                <select id="selectTarget" class="w-30 border-1 outline-none ring-0 border-emerald-500 rounded-md py-1 px-2">
-        </select></h4>
-        </div></div>
-        <div class="hidden" id="resultDiv">
-             <label><h4>Conversion Result</h4>
-            <input type="text" id="screen" readonly class="border-1 border-emerald-500  w-80 h-10 rounded-md py-1 px-2 outline-none ring-0 focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-white">
-        </label>
-        </div>
-        
-         <button id="convertNow" class="py-2 px-2 rounded-md bg-amber-500 hover:bg-amber-600 text-white text-xl mt-10">Convert Now <em class="fa-solid fa-money-bill-transfer"></em></button>
+  </section>
 
-
-        </div>  
-    </section>
-    
-
-
-    
-
-
-    <script src="../javascript/interactivity.js"></script>
+  <script src="../javascript/interactivity.js"></script>
 </body>
 </html>
